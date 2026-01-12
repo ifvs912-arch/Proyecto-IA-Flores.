@@ -1,0 +1,28 @@
+# Clasificador de Flores con IA e Integración SQL
+
+##  Descripción del Proyecto
+Este proyecto consiste en el desarrollo de un modelo de **Deep Learning** especializado en la identificación de 5 tipos de flores (claveles, dientedeleon, rosas, girasoles y tulipanes). 
+
+El sistema no solo clasifica la imagen, sino que integra un módulo de persistencia en **SQL** para almacenar un historial de cada predicción, permitiendo una trazabilidad completa del consumo del modelo.
+
+## Resultados del Modelo
+* **Arquitectura:** MobileNetV2 (Transfer Learning).
+* **Precisión (Accuracy):** 84.06% en el set de validación.
+*Procesamiento:** Redimensionamiento a 224x224 píxeles y Data Augmentation para reducir el sobreajuste.
+
+#Base de Datos
+Se implementó una base de datos **SQLite** (`registro_flores.db`) con la siguiente estructura:
+- `id`: Identificador único autoincremental.
+- `flor`: Nombre de la especie detectada.
+- `tipo_flor`: Categoría técnica.
+- `observaciones`: Metadatos sobre el origen de la predicción.
+- `fecha`: Marca de tiempo del registro.
+
+# Archivos en este repositorio
+- **Notebook Principal:** Proceso de limpieza, entrenamiento y visualización.
+- **Script SQL:** Código de conexión y manipulación de la base de datos.
+- **Base de Datos:** Archivo `.db` con registros de prueba.
+- **Informe Técnico:** Documento con metodología y reflexiones éticas.
+
+# ⚖️ Reflexiones Éticas
+El proyecto aborda la importancia de la transparencia en IA, el manejo de sesgos por distribución de datos y la seguridad en el almacenamiento de información.
